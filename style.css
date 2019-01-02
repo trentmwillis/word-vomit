@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 2rem;
+  font-size: 2rem;
+}
+
+p {
+  width: 100%;
+  max-width: 30rem;
+  margin: 1rem auto;
+  font-style: italic;
+  color: #555555;
+}
+
+textarea {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-radius: 0.25rem;
+  width: 100%;
+  max-width: 30rem;
+  height: 30rem;
+  margin: 2rem auto;
+  border: none;
+  pointer-events: none;
+}
+
+textarea:focus {
+  outline: none;
+}
