@@ -5,37 +5,91 @@
 }
 
 html {
+  --color-brand: #dc2430;
+  --color-accent: #7b4397;
+  --spacing-unit: 1.333rem;
+
   font-size: 18px;
 }
 
 body {
-  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  max-width: 42rem;
+  padding: 0 var(--spacing-unit);
+  margin: 0 auto;
 }
 
-h1 {
+.app-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin: var(--spacing-unit) 0;
+}
+
+.title {
+  color: var(--color-brand);
+
+  font-weight: 900;
   text-transform: uppercase;
-  text-align: center;
-  margin: 2rem;
-  font-size: 2rem;
+
+  background: -webkit-linear-gradient(left, var(--color-brand), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-p {
+.info-button {
+  font-size: 1rem;
+  background: transparent;
+  border: none;
+  font-weight: 900;
+  color: var(--color-brand);
+  cursor: help;
+}
+
+.info-overlay {
+  display: none;
+  position: absolute;
+  right: calc(-1 * var(--spacing-unit));
+  top: 100%;
+  background: #eee;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12), 0 2px 4px 0 rgba(0,0,0,0.08);
+  border-radius: 3px 0 3px 3px;
+  padding: var(--spacing-unit);
+}
+
+.info-overlay::after {
+  content: '';
+  border-right: 0.5rem solid transparent;
+  border-bottom: 0.5rem solid #eee;
+  border-left: 0.5rem solid transparent;
+  position: absolute;
+  top: -0.5rem;
+  right: var(--spacing-unit);
+}
+
+.info-overlay p {
   width: 100%;
-  max-width: 30rem;
-  margin: 1rem auto;
+  max-width: 21rem;
+  margin-bottom: 1rem;
   font-style: italic;
   color: #555555;
+}
+
+.info-overlay p:last-of-type {
+  margin-bottom: 0;
+}
+
+.info-button:hover + .info-overlay {
+  display: block;
 }
 
 textarea {
   display: block;
   font-size: 1rem;
   line-height: 1.5rem;
-  border-radius: 0.25rem;
   width: 100%;
-  max-width: 30rem;
   height: 30rem;
-  margin: 2rem auto;
   border: none;
   pointer-events: none;
 }

@@ -1,6 +1,6 @@
 const textarea = document.querySelector('textarea');
 
-const TIME_TO_CLEAR = 1000 * 20;
+const TIME_TO_CLEAR = 1000 * 60 * 5;
 const KEY_CODE = {
   LEFT_ARROW: 37,
   UP_ARROW: 38
